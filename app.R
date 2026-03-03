@@ -10,7 +10,7 @@ ui <- page_sidebar(
   sidebar = sidebar(
     width = 350,
     
-    # 1.Header 1
+    # 1.Header 1 - type
     h5("Buyer Type"),
     selectInput("buyer_type", label = NULL, 
                 choices = c("First Time Buyer" = "ftb", 
@@ -19,7 +19,7 @@ ui <- page_sidebar(
     
     hr(),
     
-    # 2. Mortgage Elements Grouped, with horizontal Term & Interest
+    # Header 2 - mortgage
     h5("Mortgage Estimate Variables"),
     autonumericInput("sav", "Current Savings / Equity", value = 110000, currencySymbol = "£", currencySymbolPlacement = "p", decimalPlaces = 0),
     autonumericInput("max_loan", "Maximum Loan Available", value = 400000, currencySymbol = "£", currencySymbolPlacement = "p", decimalPlaces = 0),
@@ -31,7 +31,7 @@ ui <- page_sidebar(
     
     hr(),
     
-    # 3. Legal and Other Fees as a Header
+    # 3. Header 3  - legals
     h5("Legal & Other Fees"),
     radioButtons("fee_type", label = NULL, 
                  choices = c("Realistic Estimate (Scales with Price)" = "dynamic",
@@ -114,7 +114,7 @@ server <- function(input, output, session) {
       # Surveys (e.g. RICS Home Survey): Base £400 + £1.00 per £1k of property value
       surv_fees <- 400 + (p * 0.0010)
       
-      # Moving: Base £500 + £0.50 per £1k of property value (bigger house = more stuff)
+      # Moving: Base £500 + £0.50 per £1k of property value (assuming bigger house = more stuff)
       move_fees <- 500 + (p * 0.0005)
       
     } else {

@@ -1,5 +1,7 @@
 # UK House Purchase Affordability Ballparker
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-View_on_Shinyapps.io-blue?style=for-the-badge)](https://jonobatten.shinyapps.io/HouseBuyingOutlay/)
+
 A Shiny web application designed to give prospective UK homebuyers a realistic estimate of their actual purchasing power. 
 
 Instead of just calculating maximum loan sizes, this tool works backwards from a user's current savings to determine the maximum property price they can afford after all mandatory taxes and moving costs are paid.
