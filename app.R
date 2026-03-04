@@ -76,7 +76,7 @@ ui <- page_sidebar(
 # Server Logic
 server <- function(input, output, session) {
   
-  # Vectorized SDLT Calculator (2026 Rules)
+  # Vectorised SDLT Calculator (2026 Rules)
   calc_sdlt <- function(p, type) {
     if (type == "ftb") {
       ifelse(p <= 500000,
@@ -144,7 +144,7 @@ server <- function(input, output, session) {
     best_p <- p[best_idx]
     best_loan <- actual_loan[best_idx]
     
-    # 6. Mortgage Repayment Calc (Standard Amortization)
+    # 6. Mortgage Repayment Calc (Standard Amortisation)
     r <- (input$interest / 100) / 12
     n <- input$term * 12
     monthly <- if (r > 0) {
@@ -202,7 +202,7 @@ server <- function(input, output, session) {
     }
     
     data.frame(
-      `Financial Breakdown` = c("Property Price", "Mortgage Loan Utilized", "Deposit Contributed", 
+      `Financial Breakdown` = c("Property Price", "Mortgage Loan Utilised", "Deposit Contributed", 
                                 "Stamp Duty (SDLT)", "Conveyancing & Legal", "Survey Costs", 
                                 "Moving Costs", "Savings Left Over"),
       Amount = c(
